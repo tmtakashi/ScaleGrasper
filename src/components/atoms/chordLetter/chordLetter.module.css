@@ -1,0 +1,22 @@
+.letterBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 200px;
+  margin: 0 10px;
+  border-radius: 2%;
+  border: 1px solid lightgray;
+  cursor: pointer;
+  transition: background-color 0.5s;
+}
+
+.letterBox:hover {
+  background-color: lightblue;
+}
+
+.letter {
+  font-size: 40px;
+  color: darkslategray;
+  user-select: none;
+}

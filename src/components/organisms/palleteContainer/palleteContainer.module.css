@@ -1,0 +1,18 @@
+.palleteContainer {
+  position: relative;
+  margin-top: 2%;
+}
+
+.rootsPallete {
+  width: 30%;
+  position: absolute;
+  top: 0px;
+  left: 15%;
+}
+
+.typesPallete {
+  width: 30%;
+  position: absolute;
+  top: 0px;
+  right: 15%;
+}
