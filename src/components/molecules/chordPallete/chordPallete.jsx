@@ -8,7 +8,16 @@ const ChordPallete = props => {
       <span className={styles.title}>{props.title}</span>
       <div className={styles.options}>
         {props.choices.map(choice => {
-          return <ChordPalleteOption key={choice}>{choice}</ChordPalleteOption>;
+          return (
+            <ChordPalleteOption
+              key={choice}
+              selectOption={() => {
+                props.selectOption(choice);
+              }}
+            >
+              {choice}
+            </ChordPalleteOption>
+          );
         })}
       </div>
     </div>

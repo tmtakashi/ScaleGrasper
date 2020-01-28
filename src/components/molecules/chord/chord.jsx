@@ -5,12 +5,8 @@ import styles from "./chord.module.css";
 const Chord = props => {
   return (
     <div className={styles.chord}>
-      <ChordLetter onClick={() => props.onClick("roots")}>
-        {props.chord.root}
-      </ChordLetter>
-      <ChordLetter onClick={() => props.onClick("types")}>
-        {props.chord.type}
-      </ChordLetter>
+      <ChordLetter>{props.chord.root}</ChordLetter>
+      <ChordLetter>{props.chord.type}</ChordLetter>
     </div>
   );
 };

@@ -11,10 +11,6 @@
   transition: background-color 0.5s;
 }
 
-.letterBox:hover {
-  background-color: lightblue;
-}
-
 .letter {
   font-size: 40px;
   color: darkslategray;
