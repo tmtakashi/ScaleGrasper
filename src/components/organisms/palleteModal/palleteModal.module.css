@@ -1,0 +1,27 @@
+.palleteContainer {
+  margin-top: 2%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.rootsPallete {
+  width: 35%;
+  top: 0px;
+  left: 15%;
+}
+
+.typesPallete {
+  width: 35%;
+  top: 0px;
+  right: 15%;
+}
+
+.modalFooter {
+  margin-top: 5%;
+  padding: 0 10%;
+}
+
+.openModalBtnWrapper {
+  margin-top: 5%;
+  text-align: center;
+}

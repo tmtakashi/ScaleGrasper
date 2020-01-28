@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Chord from "./components/molecules/chord/chord";
-import PalleteContainer from "./components/organisms/palleteContainer/palleteContainer"
+import PalleteModal from "./components/organisms/palleteModal/palleteModal"
 import styles from './App.module.css'
+
 
 class App extends Component {
   constructor(props) {
@@ -18,36 +19,41 @@ class App extends Component {
         },
         types: {
           title: 'Types',
-          choices: ['M', 'm', 'M7', 'm7', '7',]
+          choices: ['M', 'm', 'M7', 'm7', '7', 'mM7']
         }
       },
-      showPallete: {
-        roots: false,
-        types: false
-      }
+      modalIsOpen: false
     };
   }
 
-  toggleChordPallete(label) {
-    let showPallete = { ...this.state.showPallete }
-    if (label === 'roots') {
-      showPallete.roots = !showPallete.roots
-    } else {
-      showPallete.types = !showPallete.types
-    }
-    this.setState({ showPallete: showPallete })
+  openModal() {
+    this.setState({ modalIsOpen: true })
   }
+
+  closeModal() {
+    this.setState({ modalIsOpen: false })
+  }
+
+  editChord(choice, palleteType) {
+    let chord = { ...this.state.chord };
+    chord[palleteType] = choice;
+    this.setState({ chord: chord })
+  }
+
   render() {
     return (
       <div className={styles.app}>
         <Chord
           chord={this.state.chord}
-          onClick={(label) => { this.toggleChordPallete(label) }}
         ></Chord>
-        <PalleteContainer
+
+        <PalleteModal
+          modalIsOpen={this.state.modalIsOpen}
+          openModal={() => { this.openModal() }}
+          closeModal={() => { this.closeModal() }}
+          selectOption={(choice, palleteType) => { this.editChord(choice, palleteType) }}
           pallete={this.state.pallete}
-          showPallete={this.state.showPallete}
-        ></PalleteContainer>
+        ></PalleteModal>
       </div>
     );
   }

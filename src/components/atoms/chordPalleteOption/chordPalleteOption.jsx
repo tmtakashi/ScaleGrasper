@@ -3,7 +3,12 @@ import styles from "./chordPalleteOption.module.css";
 
 const ChordPalleteOption = props => {
   return (
-    <div className={styles.box}>
+    <div
+      onClick={() => {
+        props.selectOption(props.children);
+      }}
+      className={styles.box}
+    >
       <span>{props.children}</span>
     </div>
   );
