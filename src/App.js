@@ -15,7 +15,7 @@ class App extends Component {
       pallete: {
         roots: {
           title: 'Roots',
-          choices: ['C', 'C#/Db', 'D', 'D#/Eb', 'E', 'F', 'F#/Gb', 'G', 'G#/Ab', 'A', 'A#/Bb', 'B']
+          choices: ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B']
         },
         types: {
           title: 'Types',

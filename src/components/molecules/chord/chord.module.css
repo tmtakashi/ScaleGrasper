@@ -1,7 +1,8 @@
 .chord {
   display: flex;
   justify-content: space-between;
-  width: 20%;
+  align-items: center;
+  width: 40%;
   margin: 0 auto;
   margin-top: 5%;
 }
