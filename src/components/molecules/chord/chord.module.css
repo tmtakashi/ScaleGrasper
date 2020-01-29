@@ -2,7 +2,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 40%;
+  width: 35%;
   margin: 0 auto;
   margin-top: 5%;
+}
+
+.playChordWrapper {
+  width: 20%;
+  margin: 0 auto;
+  text-align: center;
 }
