@@ -1,27 +1,10 @@
 import React, { useEffect } from "react";
-import { Tonal, Chord } from "@tonaljs/modules";
 import Vex from "vexflow";
 import styles from "./chordNotes.module.css";
 
 const ChordNotes = props => {
   useEffect(() => {
     document.getElementById("chordNotes").innerHTML = "";
-    let chordNotes = Chord.chord(props.chord).notes;
-
-    let octave = 4;
-    chordNotes = chordNotes
-      .map((note, index) => {
-        // set chord notes to root position
-        if (
-          index > 0 &&
-          Tonal.note(note).chroma < Tonal.note(chordNotes[index - 1]).chroma
-        ) {
-          octave += 1;
-        }
-        return note + octave.toString();
-      })
-      .join(" ");
-    console.log(chordNotes);
     var vf = new Vex.Flow.Factory({
       renderer: { elementId: "chordNotes", width: 150, height: 120 }
     });
@@ -29,7 +12,7 @@ const ChordNotes = props => {
     var system = vf.System();
     system
       .addStave({
-        voices: [score.voice(score.notes(`(${chordNotes})/w`))]
+        voices: [score.voice(score.notes(`(${props.notes.join(" ")})/w`))]
       })
       .addClef("treble")
       .addTimeSignature("4/4");
