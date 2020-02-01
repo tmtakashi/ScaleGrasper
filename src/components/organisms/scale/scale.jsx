@@ -1,38 +1,75 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 import { Chord, Scale as TonalScale } from "@tonaljs/modules";
 import ScaleNotes from "../../atoms/scaleNotes/scaleNotes";
+import ScalePlayer from "../../atoms/scalePlayer/scalePlayer";
 import styles from "./scale.module.css";
 
-const Scale = props => {
-  const chordScales = Chord.chordScales(Object.values(props.chord).join(""));
-  const [currentScale, setCurrentScale] = useState(chordScales[0]);
-  const [currentScaleNotes, setCurrentScaleNotes] = useState(
-    TonalScale.scale(props.chord.root + "4 " + currentScale).notes
-  );
+class Scale extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      chordScales: this.getChordScales()
+    };
+  }
 
-  const handleScaleChange = e => {
+  componentDidMount() {
+    this.updateScale();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.chord !== this.props.chord) {
+      this.updateScale();
+    }
+  }
+
+  getChordScales() {
+    return Chord.chordScales(Object.values(this.props.chord).join(""));
+  }
+
+  getScaleNotes(scale) {
+    return TonalScale.scale(this.props.chord.root + "4 " + scale).notes;
+  }
+
+  updateScale() {
+    let currentScale = this.getChordScales()[0];
+    this.setState({
+      chordScales: this.getChordScales(),
+      currentScale: currentScale,
+      currentScaleNotes: this.getScaleNotes(currentScale)
+    });
+  }
+
+  handleScaleChange(e) {
     let clickedScale = e.target.value;
-    setCurrentScale(clickedScale);
-    setCurrentScaleNotes(
-      TonalScale.scale(props.chord.root + "4 " + clickedScale).notes
-    );
-  };
+    this.setState({
+      currentScale: clickedScale,
+      currentScaleNotes: TonalScale.scale(
+        this.props.chord.root + "4 " + clickedScale
+      ).notes
+    });
+  }
 
-  return (
-    <div className={styles.scale}>
-      <div>{props.chord.root + " " + currentScale}</div>
-      <select value={currentScale} onChange={handleScaleChange}>
-        {chordScales.map(scale => {
-          return (
-            <option value={scale} key={scale}>
-              {scale}
-            </option>
-          );
-        })}
-      </select>
-      <ScaleNotes notes={currentScaleNotes}></ScaleNotes>
-    </div>
-  );
-};
+  render() {
+    return (
+      <div className={styles.scale}>
+        <div>{this.props.chord.root + " " + this.state.currentScale}</div>
+        <select
+          value={this.state.currentScale}
+          onChange={this.handleScaleChange.bind(this)}
+        >
+          {this.state.chordScales.map(scale => {
+            return (
+              <option value={scale} key={scale}>
+                {scale}
+              </option>
+            );
+          })}
+        </select>
+        <ScaleNotes notes={this.state.currentScaleNotes}></ScaleNotes>
+        <ScalePlayer notes={this.state.currentScaleNotes}></ScalePlayer>
+      </div>
+    );
+  }
+}
 
 export default Scale;
