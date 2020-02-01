@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import Chord from "./components/molecules/chord/chord";
+import Chord from "./components/organisms/chord/chord";
+import Scale from "./components/organisms/scale/scale";
 import PalleteModal from "./components/organisms/palleteModal/palleteModal"
 import styles from './App.module.css'
 
@@ -54,6 +55,8 @@ class App extends Component {
           selectOption={(choice, palleteType) => { this.editChord(choice, palleteType) }}
           pallete={this.state.pallete}
         ></PalleteModal>
+
+        <Scale chord={this.state.chord}></Scale>
       </div>
     );
   }

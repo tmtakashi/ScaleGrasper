@@ -24,7 +24,7 @@ const Chord = props => {
 
 const chordToNotes = chord => {
   let notes = ChordTonal.chord(Object.values(chord)).notes;
-  let octave = Tonal.note(notes[0]).chroma < 9 ? 4 : 3;
+  let octave = Tonal.note(notes[0]).chroma < 7 ? 4 : 3;
   notes = notes.map((note, index) => {
     // set chord notes to root position
     if (
