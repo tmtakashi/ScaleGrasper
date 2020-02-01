@@ -2,7 +2,7 @@ import React from "react";
 import * as Tone from "tone";
 
 const ChordPlayer = props => {
-  var polySynth = new Tone.PolySynth(4, Tone.Synth).toMaster();
+  let polySynth = new Tone.PolySynth(4, Tone.Synth).toMaster();
   return (
     <div>
       <button
@@ -11,7 +11,7 @@ const ChordPlayer = props => {
         }}
         id="playChord"
       >
-        Play
+        Play chord
       </button>
     </div>
   );

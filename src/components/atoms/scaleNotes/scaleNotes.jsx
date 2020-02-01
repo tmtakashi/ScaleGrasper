@@ -68,7 +68,7 @@ class ScaleNotes extends Component {
   }
 
   renderScale() {
-    this.state.renderer.resize(800, 600);
+    this.state.renderer.resize(750, 150);
     let context = this.state.renderer.getContext();
     context.clear();
 
@@ -76,7 +76,6 @@ class ScaleNotes extends Component {
     firstStave.addClef("treble");
     firstStave.setContext(context).draw();
     let firstNotes = this.firstStaveNotes();
-    console.log(firstNotes[1].keys);
     Formatter.FormatAndDraw(context, firstStave, firstNotes);
 
     let secondStave = new Stave(320, 0, 300);
