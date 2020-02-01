@@ -14,8 +14,7 @@ const ChordNotes = props => {
       .addStave({
         voices: [score.voice(score.notes(`(${props.notes.join(" ")})/w`))]
       })
-      .addClef("treble")
-      .addTimeSignature("4/4");
+      .addClef("treble");
 
     vf.draw();
   });
