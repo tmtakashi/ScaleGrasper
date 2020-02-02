@@ -17,12 +17,6 @@ class ChordScalePlayer extends Component {
     };
   }
 
-  componentDidUpdate(prevProps) {
-    if (this.props.notes !== prevProps.notes) {
-      this.getNewSequence();
-    }
-  }
-
   getNewSequence() {
     Tone.Transport.cancel();
     const { root, type } = this.props.chord;
