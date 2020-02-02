@@ -2,7 +2,9 @@ import React from "react";
 import * as Tone from "tone";
 
 const ChordPlayer = props => {
-  let polySynth = new Tone.PolySynth(4, Tone.Synth).toMaster();
+  let polySynth = new Tone.PolySynth(4, Tone.Synth).connect(
+    new Tone.Gain(0.1).toMaster()
+  );
   return (
     <div>
       <button
@@ -18,6 +20,7 @@ const ChordPlayer = props => {
 };
 
 const playChord = (polySynth, notes) => {
+  Tone.Transport.cancel();
   polySynth.triggerAttackRelease(notes, "1m");
 };
 
