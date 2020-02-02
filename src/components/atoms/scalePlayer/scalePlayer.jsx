@@ -5,22 +5,19 @@ class ScalePlayer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      synth: new Tone.Synth().toMaster(),
+      synth: new Tone.Synth({
+        oscillator: {
+          type: "square"
+        }
+      }).connect(new Tone.Gain(0.1).toMaster()),
       sequence: this.getNewSequence()
     };
-  }
-
-  componentDidUpdate(prevProps) {
-    if (this.props.notes !== prevProps.notes) {
-      this.setState({ sequence: this.getNewSequence() });
-    }
   }
 
   getNewSequence() {
     Tone.Transport.cancel();
     let sequence = new Tone.Sequence(
       (time, note) => {
-        console.log(note);
         this.state.synth.triggerAttackRelease(note, "4n", time);
       },
       this.props.notes,
@@ -31,6 +28,7 @@ class ScalePlayer extends Component {
   }
 
   playScale() {
+    this.getNewSequence();
     Tone.Transport.stop();
     Tone.Transport.position = 0;
     Tone.Transport.start();
@@ -39,7 +37,7 @@ class ScalePlayer extends Component {
   render() {
     return (
       <div>
-        <button onClick={this.playScale} id="playChord">
+        <button onClick={this.playScale.bind(this)} id="playChord">
           Play scale
         </button>
       </div>

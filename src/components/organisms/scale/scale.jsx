@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Chord, Scale as TonalScale } from "@tonaljs/modules";
 import ScaleNotes from "../../atoms/scaleNotes/scaleNotes";
 import ScalePlayer from "../../atoms/scalePlayer/scalePlayer";
+import ChordScalePlayer from "../../atoms/chordScalePlayer/chordScalePlayer";
 import styles from "./scale.module.css";
 
 class Scale extends Component {
@@ -67,6 +68,10 @@ class Scale extends Component {
         </select>
         <ScaleNotes notes={this.state.currentScaleNotes}></ScaleNotes>
         <ScalePlayer notes={this.state.currentScaleNotes}></ScalePlayer>
+        <ChordScalePlayer
+          notes={this.state.currentScaleNotes}
+          chord={this.props.chord}
+        ></ChordScalePlayer>
       </div>
     );
   }

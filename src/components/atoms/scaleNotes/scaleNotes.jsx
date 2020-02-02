@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Vex from "vexflow";
 import styles from "./scaleNotes.module.css";
 
-const { Accidental, Formatter, Stave, StaveNote, Renderer, Voice } = Vex.Flow;
+const { Accidental, Formatter, Stave, StaveNote, Renderer } = Vex.Flow;
 
 const ACCIDENTAL_REGEX = /[#b]+/;
 const OCTAVE_REGREX = /\d/;
