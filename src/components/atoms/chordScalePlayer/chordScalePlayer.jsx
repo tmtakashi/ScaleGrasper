@@ -19,8 +19,7 @@ class ChordScalePlayer extends Component {
 
   getNewSequence() {
     Tone.Transport.cancel();
-    const { root, type } = this.props.chord;
-    let chordNotes = chordToNotes(root + type);
+    let chordNotes = chordToNotes(this.props.chord);
     let chordSequence = new Tone.Part(
       (time, chord) => {
         this.state.polySynth.triggerAttackRelease(chord, "2m", time);
