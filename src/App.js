@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Chord from "./components/organisms/chord/chord";
 import Scale from "./components/organisms/scale/scale";
 import ChordCard from './components/molecules/cards/chordCard/chordCard'
 
@@ -22,16 +21,7 @@ class App extends Component {
           choices: ['M', 'm', 'M7', 'm7', '7', 'mM7']
         }
       },
-      modalIsOpen: false
     };
-  }
-
-  openModal() {
-    this.setState({ modalIsOpen: true })
-  }
-
-  closeModal() {
-    this.setState({ modalIsOpen: false })
   }
 
   handleEditChord(choice, palleteType) {
