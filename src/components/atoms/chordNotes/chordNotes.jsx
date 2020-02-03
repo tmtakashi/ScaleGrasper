@@ -6,7 +6,7 @@ const ChordNotes = props => {
   useEffect(() => {
     document.getElementById("chordNotes").innerHTML = "";
     var vf = new Vex.Flow.Factory({
-      renderer: { elementId: "chordNotes", width: 150, height: 120 }
+      renderer: { elementId: "chordNotes", width: 220, height: 150 }
     });
     var score = vf.EasyScore();
     var system = vf.System();
