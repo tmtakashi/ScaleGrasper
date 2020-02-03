@@ -20,16 +20,6 @@ const modalStyles = {
 const PalleteModal = props => {
   return (
     <div>
-      <div className={styles.openModalBtnWrapper}>
-        <button
-          className={styles.openModalBtn}
-          onClick={() => {
-            props.openModal();
-          }}
-        >
-          Change Chord
-        </button>
-      </div>
       <Modal
         style={modalStyles}
         isOpen={props.modalIsOpen}

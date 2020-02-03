@@ -1,21 +1,19 @@
 import React from "react";
 import * as Tone from "tone";
+import PlayerButton from "../playerButton";
 
 const ChordPlayer = props => {
   let polySynth = new Tone.PolySynth(4, Tone.Synth).connect(
     new Tone.Gain(0.1).toMaster()
   );
   return (
-    <div>
-      <button
-        onClick={() => {
-          playChord(polySynth, props.notes);
-        }}
-        id="playChord"
-      >
-        Play chord
-      </button>
-    </div>
+    <PlayerButton
+      onClick={() => {
+        playChord(polySynth, props.notes);
+      }}
+    >
+      Play chord
+    </PlayerButton>
   );
 };
 

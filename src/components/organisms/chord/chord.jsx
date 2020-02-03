@@ -10,8 +10,7 @@ const Chord = props => {
   return (
     <div>
       <div className={styles.chord}>
-        <ChordLetter>{props.chord.root}</ChordLetter>
-        <ChordLetter>{props.chord.type}</ChordLetter>
+        <ChordLetter>{Object.values(props.chord).join("")}</ChordLetter>
         <ChordNotes notes={notes}></ChordNotes>
       </div>
       <div className={styles.playChordWrapper}>

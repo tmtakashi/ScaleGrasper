@@ -1,11 +1,17 @@
 import React from "react";
-import styles from "./chordLetter.module.css";
 
 const ChordLetter = props => {
   return (
-    <div className={styles.letterBox}>
-      <span className={styles.letter}>{props.children}</span>
-    </div>
+    <span className="letter">
+      {props.children}
+      <style jsx>{`
+        .letter {
+          font-size: 2.5rem;
+          color: #837f7f;
+          user-select: none;
+        }
+      `}</style>
+    </span>
   );
 };
 
