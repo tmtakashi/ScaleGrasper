@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Chord from "./components/organisms/chord/chord";
 import Scale from "./components/organisms/scale/scale";
 import PalleteModal from "./components/organisms/palleteModal/palleteModal"
+import ChordCard from './components/molecules/cards/chordCard/chordCard'
 import styles from './App.module.css'
 
 
@@ -57,6 +58,8 @@ class App extends Component {
         ></PalleteModal>
 
         <Scale chord={this.state.chord}></Scale>
+
+        <ChordCard></ChordCard>
       </div>
     );
   }
