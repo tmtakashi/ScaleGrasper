@@ -33,15 +33,21 @@ class App extends Component {
   render() {
     return (
       <div className="wrapper">
-        <ChordCard chord={this.state.chord}
-          pallete={this.state.pallete}
-          editChord={(choice, palleteType) => { this.handleEditChord(choice, palleteType) }} />
+        <div className="cardsWrapper">
+          <ChordCard chord={this.state.chord}
+            pallete={this.state.pallete}
+            editChord={(choice, palleteType) => { this.handleEditChord(choice, palleteType) }} />
 
-        <Scale chord={this.state.chord}></Scale>
+          <Scale chord={this.state.chord}></Scale>
+        </div>
 
         <style jsx>{`
           .wrapper {
             height: 100%;
+          }
+          .cardsWrapper {
+            display: flex;
+            justify-content: space-between;
           }
         `}
         </style>
