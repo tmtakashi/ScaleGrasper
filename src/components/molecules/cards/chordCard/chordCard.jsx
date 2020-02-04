@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import ChordLetter from "../../../atoms/chordLetter/chordLetter";
+import CardTitle from "../../../atoms/cardTitle/cardTitle";
 import ChordNotes from "../../../atoms/chordNotes/chordNotes";
 import ChordPlayer from "../../../atoms/chordPlayer/chordPlayer";
+import Card from "../../../atoms/card";
 import OpenModalButton from "../../../atoms/openModalButton";
 import PalleteModal from "../../../organisms/palleteModal/palleteModal";
 import { chordToNotes } from "../../../../lib/converter";
@@ -10,10 +11,10 @@ const ChordCard = props => {
   let notes = chordToNotes(props.chord);
   let [modalIsOpen, setModalIsOpen] = useState(false);
   return (
-    <div className="card">
+    <Card>
       <div className="letterButtonWrapper">
         <div className="letterWrapper">
-          <ChordLetter>{Object.values(props.chord).join("")}</ChordLetter>
+          <CardTitle>{Object.values(props.chord).join("")}</CardTitle>
         </div>
         <OpenModalButton
           onClick={() => {
@@ -50,7 +51,7 @@ const ChordCard = props => {
         .letterButtonWrapper {
           display:flex;
           align-items: center;
-          height: 30%;
+          height: 40%;
           padding: 3% 3%;
         }
         .letterWrapper {
@@ -64,33 +65,15 @@ const ChordCard = props => {
         .playerNotesWrapper {
           display: flex;
           align-items: center;
-          height: 40%;
+          height: 50%;
           padding 0 5%;
         }
         .notesWrapper {
           margin-left: 5%;
         }
       `}</style>
-    </div>
+    </Card>
   );
 };
-// import React from "react";
-
-// const Chord = props => {
-//   let notes = chordToNotes(props.chord);
-//   return (
-//     <div>
-//       <div className={styles.chord}>
-//         <ChordLetter>{Object.values(props.chord).join("")}</ChordLetter>
-//         <ChordNotes notes={notes}></ChordNotes>
-//       </div>
-//       <div className={styles.playChordWrapper}>
-//         <ChordPlayer notes={notes}></ChordPlayer>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Chord;
 
 export default ChordCard;

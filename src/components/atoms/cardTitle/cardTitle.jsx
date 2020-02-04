@@ -1,12 +1,12 @@
 import React from "react";
 
-const ChordLetter = props => {
+const CardTitle = props => {
   return (
     <span className="letter">
       {props.children}
       <style jsx>{`
         .letter {
-          font-size: 2.5rem;
+          font-size: 1.7rem;
           color: #837f7f;
           user-select: none;
         }
@@ -15,4 +15,4 @@ const ChordLetter = props => {
   );
 };
 
-export default ChordLetter;
+export default CardTitle;
