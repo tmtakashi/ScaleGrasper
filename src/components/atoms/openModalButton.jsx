@@ -1,23 +1,20 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEdit } from "@fortawesome/free-solid-svg-icons";
 
 const OpenModalButton = props => {
   return (
-    <div onClick={() => props.onClick()} className="btn">
-      {props.children}
+    <div>
+      <FontAwesomeIcon
+        color="#21a1c7"
+        icon={faEdit}
+        onClick={() => props.onClick()}
+      />
       <style jsx>
         {`
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          border-radius: 4px;
-          border: none;
-          width: 25%;
-          height: 30%;
-          padding: 0 0.5%;
-          color: #fff;
-          background: #c7a721;
-          cursor: pointer;
-          font-size: 0.9rem;
+          div {
+            cursor: pointer;
+          }
         `}
       </style>
     </div>

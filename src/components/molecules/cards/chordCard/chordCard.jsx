@@ -75,23 +75,5 @@ const ChordCard = props => {
     </Card>
   );
 };
-// import React from "react";
-
-// const Chord = props => {
-//   let notes = chordToNotes(props.chord);
-//   return (
-//     <div>
-//       <div className={styles.chord}>
-//         <ChordLetter>{Object.values(props.chord).join("")}</ChordLetter>
-//         <ChordNotes notes={notes}></ChordNotes>
-//       </div>
-//       <div className={styles.playChordWrapper}>
-//         <ChordPlayer notes={notes}></ChordPlayer>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Chord;
 
 export default ChordCard;

@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { Chord, Scale } from "@tonaljs/modules";
 import ChordCard from './components/molecules/cards/chordCard/chordCard'
-import ScaleCard from './components/molecules/cards/scaleCard/scaleCard'
 import ChordScalePlayer from "./components/atoms/chordScalePlayer/chordScalePlayer";
+import Footer from "./components/atoms/footer";
+import Header from './components/atoms/header';
+import ScaleCard from './components/molecules/cards/scaleCard/scaleCard'
 
 
 class App extends Component {
@@ -74,6 +76,9 @@ class App extends Component {
   render() {
     return (
       <div className="wrapper">
+        <Header>
+          ScaleGrasper
+        </Header>
         <div className="cardsWrapper">
           <ChordCard chord={this.state.chord}
             pallete={this.state.pallete}
@@ -92,6 +97,7 @@ class App extends Component {
             chord={this.state.chord}
           ></ChordScalePlayer>
         </div>
+        <Footer />
 
         <style jsx>{`
           .wrapper {
@@ -99,7 +105,7 @@ class App extends Component {
           }
           .cardsWrapper {
             margin: 0 auto;
-            padding: 0 10%;
+            padding: 0 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;

@@ -68,7 +68,7 @@ class ScaleNotes extends Component {
   }
 
   renderScale() {
-    this.state.renderer.resize(800, 100);
+    this.state.renderer.resize(750, 100);
     let context = this.state.renderer.getContext();
     context.clear();
     context.setViewBox(0, 0, 1200, 100);
