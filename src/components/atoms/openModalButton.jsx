@@ -12,7 +12,7 @@ const OpenModalButton = props => {
           border-radius: 4px;
           border: none;
           width: 25%;
-          height: 50%;
+          height: 30%;
           padding: 0 0.5%;
           color: #fff;
           background: #c7a721;

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import * as Tone from "tone";
+import PlayerButton from "../../atoms/playerButton";
 
 class ScalePlayer extends Component {
   constructor(props) {
@@ -36,11 +37,9 @@ class ScalePlayer extends Component {
 
   render() {
     return (
-      <div>
-        <button onClick={this.playScale.bind(this)} id="playChord">
-          Play scale
-        </button>
-      </div>
+      <PlayerButton onClick={this.playScale.bind(this)} id="playChord">
+        Play scale
+      </PlayerButton>
     );
   }
 }

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { chordToNotes } from "../../../lib/converter";
+import PlayBothButton from "../../atoms/playBothButton";
 import * as Tone from "tone";
 
 class ChordScalePlayer extends Component {
@@ -47,11 +48,9 @@ class ChordScalePlayer extends Component {
 
   render() {
     return (
-      <div>
-        <button onClick={this.playChordScale.bind(this)}>
-          Play chord and scale
-        </button>
-      </div>
+      <PlayBothButton onClick={this.playChordScale.bind(this)}>
+        Play Both
+      </PlayBothButton>
     );
   }
 }

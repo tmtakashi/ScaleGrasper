@@ -1,21 +1,21 @@
 import React from "react";
 
-const PlayerButton = props => {
+const PlayBothButton = props => {
   return (
     <div onClick={() => props.onClick()} className="btn">
       {props.children}
       <style jsx>
         {`
           display: flex;
-          justify-content: space-between;
+          justify-content: center;
           align-items: center;
           border-radius: 4px;
           border: none;
-          height: 30%;
+          height: 60%;
           min-width: 15%;
           padding: 0 2%;
           color: #fff;
-          background: #21a1c7;
+          background: #2ec721;
           cursor: pointer;
           font-size: 1rem;
         `}
@@ -24,4 +24,4 @@ const PlayerButton = props => {
   );
 };
 
-export default PlayerButton;
+export default PlayBothButton;

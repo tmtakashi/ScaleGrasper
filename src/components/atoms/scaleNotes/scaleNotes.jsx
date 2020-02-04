@@ -68,9 +68,10 @@ class ScaleNotes extends Component {
   }
 
   renderScale() {
-    this.state.renderer.resize(750, 150);
+    this.state.renderer.resize(800, 100);
     let context = this.state.renderer.getContext();
     context.clear();
+    context.setViewBox(0, 0, 1200, 100);
 
     let firstStave = new Stave(20, 0, 300);
     firstStave.addClef("treble");

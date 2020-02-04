@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ChordLetter from "../../../atoms/chordLetter/chordLetter";
+import CardTitle from "../../../atoms/cardTitle/cardTitle";
 import ChordNotes from "../../../atoms/chordNotes/chordNotes";
 import ChordPlayer from "../../../atoms/chordPlayer/chordPlayer";
 import Card from "../../../atoms/card";
@@ -14,7 +14,7 @@ const ChordCard = props => {
     <Card>
       <div className="letterButtonWrapper">
         <div className="letterWrapper">
-          <ChordLetter>{Object.values(props.chord).join("")}</ChordLetter>
+          <CardTitle>{Object.values(props.chord).join("")}</CardTitle>
         </div>
         <OpenModalButton
           onClick={() => {

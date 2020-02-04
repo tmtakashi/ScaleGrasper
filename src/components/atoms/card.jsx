@@ -8,8 +8,8 @@ const Card = props => {
         .card {
           border-radius: 5%;
           box-shadow: 0px 2px 3px -2px rgba(0, 0, 0, 0.5);
-          width: 40%;
-          height: 35%;
+          min-width: 50%;
+          height: 50%;
           background-color: #fff;
         }
       `}</style>
