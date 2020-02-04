@@ -33,6 +33,12 @@ class App extends Component {
     this.updateScale();
   }
 
+  componentDidUpdate(_, prevState) {
+    if (prevState.chord !== this.state.chord) {
+      this.updateScale();
+    }
+  }
+
   getChordScales() {
     return Chord.chordScales(Object.values(this.state.chord).join(""));
   }
