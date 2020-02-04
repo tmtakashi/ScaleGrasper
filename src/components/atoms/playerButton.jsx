@@ -16,7 +16,7 @@ const PlayerButton = props => {
           color: #fff;
           background: #21a1c7;
           cursor: pointer;
-          font-size: 1.2rem;
+          font-size: 1rem;
         `}
       </style>
     </div>

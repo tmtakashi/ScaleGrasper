@@ -46,6 +46,8 @@ class App extends Component {
             height: 100%;
           }
           .cardsWrapper {
+            margin: 0 auto;
+            padding: 0 10%;
             display: flex;
             justify-content: space-between;
           }
