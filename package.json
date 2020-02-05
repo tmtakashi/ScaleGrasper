@@ -1,5 +1,5 @@
 {
-  "homepage": "http://tmtakashi.github.io/chordScale",
+  "homepage": "http://tmtakashi.github.io/ScaleGrasper",
   "name": "chord-scale",
   "version": "0.1.0",
   "private": true,
@@ -72,7 +72,7 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js && mv build docs",
+    "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "storybook": "start-storybook",
     "predeploy": "npm run build",
