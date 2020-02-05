@@ -51,7 +51,7 @@ const ChordCard = props => {
         .letterButtonWrapper {
           display:flex;
           align-items: center;
-          height: 40%;
+          height: 30%;
           padding: 3% 3%;
         }
         .letterWrapper {

@@ -1,6 +1,7 @@
 import React from "react";
 import ScaleNotes from "../../../atoms/scaleNotes/scaleNotes";
 import ScalePlayer from "../../../atoms/scalePlayer/scalePlayer";
+import ScaleSelector from "../../../atoms/scaleSelector";
 import Card from "../../../atoms/card";
 import CardTitle from "../../../atoms/cardTitle/cardTitle";
 
@@ -11,18 +12,13 @@ const ScaleCard = props => {
         <div className="letterWrapper">
           <CardTitle>{props.chord.root + " " + props.currentScale}</CardTitle>
         </div>
-        <select
-          value={props.currentScale}
-          onChange={e => props.onScaleChange(e.target.value)}
-        >
-          {props.chordScales.map(scale => {
-            return (
-              <option value={scale} key={scale}>
-                {scale}
-              </option>
-            );
-          })}
-        </select>
+        <ScaleSelector
+          currentScale={props.currentScale}
+          chordScales={props.chordScales}
+          onScaleChange={scale => {
+            props.onScaleChange(scale);
+          }}
+        />
       </div>
       <div className="playerNotesWrapper">
         <ScalePlayer notes={props.currentScaleNotes}></ScalePlayer>

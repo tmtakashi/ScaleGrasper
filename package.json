@@ -71,9 +71,10 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
+    "build": "node scripts/build.js && mv build docs",
     "test": "node scripts/test.js",
-    "storybook": "start-storybook"
+    "storybook": "start-storybook",
+    "deploy": "gh-pages -d docs"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -96,7 +97,8 @@
     "babel-loader": "^8.0.6",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
-    "css-loader": "^3.4.2"
+    "css-loader": "^3.4.2",
+    "gh-pages": "^2.2.0"
   },
   "babel": {
     "presets": [
@@ -155,5 +157,6 @@
       "jest-watch-typeahead/filename",
       "jest-watch-typeahead/testname"
     ]
-  }
+  },
+  "homepage": "http://tmtakashi.github.io/chordScale"
 }
