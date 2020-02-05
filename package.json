@@ -1,4 +1,5 @@
 {
+  "homepage": "http://tmtakashi.github.io/chordScale",
   "name": "chord-scale",
   "version": "0.1.0",
   "private": true,
@@ -74,7 +75,8 @@
     "build": "node scripts/build.js && mv build docs",
     "test": "node scripts/test.js",
     "storybook": "start-storybook",
-    "deploy": "gh-pages -d docs"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -157,6 +159,5 @@
       "jest-watch-typeahead/filename",
       "jest-watch-typeahead/testname"
     ]
-  },
-  "homepage": "http://tmtakashi.github.io/chordScale"
+  }
 }
