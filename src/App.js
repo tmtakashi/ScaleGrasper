@@ -1,10 +1,12 @@
 import React, { Component } from "react";
+import * as Tone from 'tone'
 import { Chord, Scale } from "@tonaljs/modules";
 import ChordCard from './components/molecules/cards/chordCard/chordCard'
 import ChordScalePlayer from "./components/atoms/chordScalePlayer/chordScalePlayer";
 import Footer from "./components/atoms/footer";
 import Header from './components/atoms/header';
 import ScaleCard from './components/molecules/cards/scaleCard/scaleCard'
+import BpmSlider from './components/atoms/bpmSlider'
 
 
 class App extends Component {
@@ -73,29 +75,38 @@ class App extends Component {
     });
   }
 
+  handleBpmChange(bpm) {
+    Tone.Transport.bpm.value = bpm;
+  }
+
   render() {
     return (
       <div className="wrapper">
         <Header>
           ScaleGrasper
         </Header>
-        <div className="cardsWrapper">
-          <ChordCard chord={this.state.chord}
-            pallete={this.state.pallete}
-            editChord={(choice, palleteType) => { this.handleEditChord(choice, palleteType) }} />
-          <ScaleCard
-            chord={this.state.chord}
-            chordScales={this.state.chordScales}
-            currentScale={this.state.currentScale}
-            currentScaleNotes={this.state.currentScaleNotes}
-            onScaleChange={(selectedScale) => this.handleScaleChange(selectedScale)}
-          ></ScaleCard>
-        </div>
-        <div className="chordScaleWrapper">
-          <ChordScalePlayer
-            notes={this.state.currentScaleNotes}
-            chord={this.state.chord}
-          ></ChordScalePlayer>
+        <div className="container">
+          <div className="cardsWrapper">
+            <ChordCard chord={this.state.chord}
+              pallete={this.state.pallete}
+              editChord={(choice, palleteType) => { this.handleEditChord(choice, palleteType) }} />
+            <ScaleCard
+              chord={this.state.chord}
+              chordScales={this.state.chordScales}
+              currentScale={this.state.currentScale}
+              currentScaleNotes={this.state.currentScaleNotes}
+              onScaleChange={(selectedScale) => this.handleScaleChange(selectedScale)}
+            ></ScaleCard>
+          </div>
+          <div className="controllerWrapper">
+            <BpmSlider onBpmChange={bpm => this.handleBpmChange(bpm)} />
+          </div>
+          <div className="chordScaleWrapper">
+            <ChordScalePlayer
+              notes={this.state.currentScaleNotes}
+              chord={this.state.chord}
+            ></ChordScalePlayer>
+          </div>
         </div>
         <Footer />
 
@@ -103,18 +114,29 @@ class App extends Component {
           .wrapper {
             height: 100%;
           }
+          .container {
+            display: flex:
+            justify-content: center;
+            padding: 0 5%;
+            margin: 0 auto;
+            height: 100%;
+          }
           .cardsWrapper {
             margin: 0 auto;
-            padding: 0 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 70%;
+            height: 75%;
+          }
+          .controllerWrapper {
+            display:flex;
+            margin: 0 auto;
           }
           .chordScaleWrapper {
             width: 10%;
             height: 10%;
             margin: 0 auto;
+            margin-top: 3%;
           }
         `}
         </style>

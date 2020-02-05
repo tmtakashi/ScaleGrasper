@@ -8,8 +8,8 @@ const Footer = props => {
           footer {
             background-color: #21a1c7;
             width: 100%;
-            height: 5%;
-            position: absolute;
+            height: 3%;
+            position: fixed;
             bottom: 0;
           }
         `}

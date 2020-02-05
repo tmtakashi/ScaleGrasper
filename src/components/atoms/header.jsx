@@ -7,7 +7,7 @@ const Header = props => {
       <style jsx>{`
         header {
           background-color: #21a1c7;
-          position: absolute;
+          position: fixed;
           width: 100%;
         }
         header h1 {
