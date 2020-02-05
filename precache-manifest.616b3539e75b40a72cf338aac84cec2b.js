@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "39a6ba35634ca31b727ee9b068ca4d6c",
+    "revision": "640beccda7cdbeb08593d12a78df4746",
     "url": "/ScaleGrasper/index.html"
   },
   {
-    "revision": "af185b46ef51ef4c8c84",
+    "revision": "08bc6cc937e6b8683eb7",
     "url": "/ScaleGrasper/static/css/main.d15ab39d.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ScaleGrasper/static/js/2.50cbe65b.chunk.js.LICENSE"
   },
   {
-    "revision": "af185b46ef51ef4c8c84",
-    "url": "/ScaleGrasper/static/js/main.5d0c6061.chunk.js"
+    "revision": "08bc6cc937e6b8683eb7",
+    "url": "/ScaleGrasper/static/js/main.902485df.chunk.js"
   },
   {
     "revision": "4cbc7cb63d473fb1dec4",
