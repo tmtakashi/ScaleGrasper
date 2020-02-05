@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ed655963c611fc801673eb58da61daf4",
+    "revision": "39a6ba35634ca31b727ee9b068ca4d6c",
     "url": "/ScaleGrasper/index.html"
   },
   {
