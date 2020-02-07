@@ -19,31 +19,29 @@ const modalStyles = {
 
 const PalleteModal = props => {
   return (
-    <div>
-      <Modal
-        style={modalStyles}
-        isOpen={props.modalIsOpen}
-        onRequestClose={props.closeModal}
-      >
-        <PalleteContainer>
-          <RootsPallete>
-            <ChordPallete
-              selectOption={choice => props.selectOption(choice, "root")}
-              {...props.pallete.roots}
-            ></ChordPallete>
-          </RootsPallete>
-          <TypesPallete>
-            <ChordPallete
-              selectOption={choice => props.selectOption(choice, "type")}
-              {...props.pallete.types}
-            ></ChordPallete>
-          </TypesPallete>
-        </PalleteContainer>
-        <ModalFooter>
-          <button onClick={props.closeModal}>Close</button>
-        </ModalFooter>
-      </Modal>
-    </div>
+    <Modal
+      style={modalStyles}
+      isOpen={props.modalIsOpen}
+      onRequestClose={props.closeModal}
+    >
+      <PalleteContainer>
+        <RootsPallete>
+          <ChordPallete
+            selectOption={choice => props.selectOption(choice, "root")}
+            {...props.pallete.roots}
+          ></ChordPallete>
+        </RootsPallete>
+        <TypesPallete>
+          <ChordPallete
+            selectOption={choice => props.selectOption(choice, "type")}
+            {...props.pallete.types}
+          ></ChordPallete>
+        </TypesPallete>
+      </PalleteContainer>
+      <ModalFooter>
+        <button onClick={props.closeModal}>Close</button>
+      </ModalFooter>
+    </Modal>
   );
 };
 
