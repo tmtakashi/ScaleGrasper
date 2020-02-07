@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import Vex from "vexflow";
-import styles from "./chordNotes.module.css";
 
 const ChordNotes = props => {
   useEffect(() => {
@@ -18,7 +17,7 @@ const ChordNotes = props => {
 
     vf.draw();
   });
-  return <div className={styles.chordNotesWrapper} id="chordNotes"></div>;
+  return <div id="chordNotes"></div>;
 };
 
 export default ChordNotes;
