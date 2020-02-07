@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
+import variables from "../../variables.scss";
 
 const PlayBothButton = props => {
   return (
@@ -17,8 +18,8 @@ const PlayBothButton = props => {
             height: 60%;
             min-width: 15%;
             padding: 0 10%;
-            color: #fff;
-            background: #2ec721;
+            color: ${variables.btnTextColor};
+            background: ${variables.secondaryColor};
             cursor: pointer;
             font-size: 1rem;
           }

@@ -1,4 +1,5 @@
 import React from "react";
+import variables from "../../../variables.scss";
 
 const CardTitle = props => {
   return (
@@ -7,7 +8,7 @@ const CardTitle = props => {
       <style jsx>{`
         .letter {
           font-size: 1.7rem;
-          color: #837f7f;
+          color: ${variables.cardTitleColor};
           user-select: none;
         }
       `}</style>

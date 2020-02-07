@@ -1,12 +1,13 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
+import variables from "../../variables.scss";
 
 const OpenModalButton = props => {
   return (
     <div>
       <FontAwesomeIcon
-        color="#21a1c7"
+        color={variables.primaryColor}
         icon={faEdit}
         onClick={() => props.onClick()}
       />

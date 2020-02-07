@@ -1,0 +1,13 @@
+$primary-color: #21a1c7;
+$secondary-color: #2ec721;
+$body-background: #f3f3f3;
+$header-text-color: #ffffff;
+$card-title-color: #837f7f;
+$btn-text-color: #ffffff;
+:export {
+  primaryColor: $primary-color;
+  secondaryColor: $secondary-color;
+  headerTextColor: $header-text-color;
+  cardTitleColor: $card-title-color;
+  btnTextColor: $btn-text-color;
+}

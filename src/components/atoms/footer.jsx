@@ -1,4 +1,5 @@
 import React from "react";
+import variables from "../../variables.scss";
 
 const Footer = props => {
   return (
@@ -6,7 +7,7 @@ const Footer = props => {
       <style jsx>
         {`
           footer {
-            background-color: #21a1c7;
+            background-color: ${variables.primaryColor};
             width: 100%;
             height: 3%;
             position: fixed;
