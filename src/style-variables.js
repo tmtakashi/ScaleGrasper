@@ -4,6 +4,7 @@ const variables = {
   headerTextColor: '#ffffff',
   cardTitleColor: '#837f7f',
   btnTextColor: '#ffffff',
+  scaleSelectorColor: '#333',
   cardTitleFontSize: '1.7rem',
 }
 
