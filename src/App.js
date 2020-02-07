@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import * as Tone from 'tone'
 import { Chord, Scale } from "@tonaljs/modules";
-import ChordCard from './components/molecules/cards/chordCard/chordCard'
+import ChordCard from './components/organisms/cards/chordCard/chordCard'
 import ChordScalePlayer from "./components/atoms/chordScalePlayer/chordScalePlayer";
 import Footer from "./components/atoms/footer";
 import Header from './components/atoms/header';
-import ScaleCard from './components/molecules/cards/scaleCard/scaleCard'
+import ScaleCard from './components/organisms/cards/scaleCard/scaleCard'
 import BpmSlider from './components/atoms/bpmSlider'
 
 

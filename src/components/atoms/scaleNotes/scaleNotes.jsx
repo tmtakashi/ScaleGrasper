@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Vex from "vexflow";
-import styles from "./scaleNotes.module.css";
 
 const { Accidental, Formatter, Stave, StaveNote, Renderer } = Vex.Flow;
 
@@ -89,7 +88,6 @@ class ScaleNotes extends Component {
   render() {
     return (
       <div
-        className={styles.scaleNotesWrapper}
         id="scaleNotes"
         ref={this.wrapperRef}
         dangerouslySetInnerHTML={{ __html: "" }}

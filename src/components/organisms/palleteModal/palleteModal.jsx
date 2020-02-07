@@ -1,7 +1,7 @@
 import React from "react";
+import styled from "styled-components";
 import Modal from "react-modal";
 import ChordPallete from "../../molecules/chordPallete/chordPallete";
-import styles from "./palleteModal.module.css";
 
 Modal.setAppElement("#root");
 
@@ -19,32 +19,53 @@ const modalStyles = {
 
 const PalleteModal = props => {
   return (
-    <div>
-      <Modal
-        style={modalStyles}
-        isOpen={props.modalIsOpen}
-        onRequestClose={props.closeModal}
-      >
-        <div className={styles.palleteContainer}>
-          <div className={styles.rootsPallete}>
-            <ChordPallete
-              selectOption={choice => props.selectOption(choice, "root")}
-              {...props.pallete.roots}
-            ></ChordPallete>
-          </div>
-          <div className={styles.typesPallete}>
-            <ChordPallete
-              selectOption={choice => props.selectOption(choice, "type")}
-              {...props.pallete.types}
-            ></ChordPallete>
-          </div>
-        </div>
-        <div className={styles.modalFooter}>
-          <button onClick={props.closeModal}>Close</button>
-        </div>
-      </Modal>
-    </div>
+    <Modal
+      style={modalStyles}
+      isOpen={props.modalIsOpen}
+      onRequestClose={props.closeModal}
+    >
+      <PalleteContainer>
+        <RootsPallete>
+          <ChordPallete
+            selectOption={choice => props.selectOption(choice, "root")}
+            {...props.pallete.roots}
+          ></ChordPallete>
+        </RootsPallete>
+        <TypesPallete>
+          <ChordPallete
+            selectOption={choice => props.selectOption(choice, "type")}
+            {...props.pallete.types}
+          ></ChordPallete>
+        </TypesPallete>
+      </PalleteContainer>
+      <ModalFooter>
+        <button onClick={props.closeModal}>Close</button>
+      </ModalFooter>
+    </Modal>
   );
 };
+
+const PalleteContainer = styled.div`
+  margin-top: 2%;
+  display: flex;
+  justify-content: space-around;
+`;
+
+const RootsPallete = styled.div`
+  width: 35%;
+  top: 0px;
+  left: 15%;
+`;
+
+const TypesPallete = styled.div`
+  width: 35%;
+  top: 0px;
+  right: 15%;
+`;
+
+const ModalFooter = styled.div`
+  margin-top: 5%;
+  padding: 0 10%;
+`;
 
 export default PalleteModal;

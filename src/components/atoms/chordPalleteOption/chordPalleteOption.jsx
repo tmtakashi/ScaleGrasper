@@ -1,17 +1,34 @@
 import React from "react";
-import styles from "./chordPalleteOption.module.css";
+import styled from "styled-components";
 
 const ChordPalleteOption = props => {
   return (
-    <div
+    <Box
       onClick={() => {
         props.selectOption(props.children);
       }}
-      className={styles.box}
     >
-      <span>{props.children}</span>
-    </div>
+      <Item>{props.children}</Item>
+    </Box>
   );
 };
+
+const Box = styled.div`
+  display: flex;
+  margin: 2px 2px;
+  width: 20%;
+  height: 50px;
+  border: 1px solid lightgrey;
+  border-radius: 10%;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+  transition: background-color 0.5s;
+`;
+
+const Item = styled.span`
+  font-size: 0.8rem;
+`;
 
 export default ChordPalleteOption;
