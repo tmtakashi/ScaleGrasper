@@ -1,19 +1,15 @@
 import React from "react";
-import variables from "../../../variables.scss";
+import styled from "styled-components";
+import variables from "../../../style-variables";
 
 const CardTitle = props => {
-  return (
-    <span className="letter">
-      {props.children}
-      <style jsx>{`
-        .letter {
-          font-size: 1.7rem;
-          color: ${variables.cardTitleColor};
-          user-select: none;
-        }
-      `}</style>
-    </span>
-  );
+  return <Title>{props.children}</Title>;
 };
+
+const Title = styled.span`
+  font-size: ${variables.cardTitleFontSize};
+  color: ${variables.cardTitleColor};
+  user-select: none;
+`;
 
 export default CardTitle;
