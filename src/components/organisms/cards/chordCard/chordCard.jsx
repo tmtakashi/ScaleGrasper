@@ -69,6 +69,7 @@ const PlayerNotesWrapper = styled.div`
 
 const NotesWrapper = styled.div`
   margin-left: 5%;
+  width: 30%;
 `;
 
 export default ChordCard;
