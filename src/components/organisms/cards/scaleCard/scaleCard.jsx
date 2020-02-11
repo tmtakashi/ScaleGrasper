@@ -13,13 +13,15 @@ const ScaleCard = props => {
         <TitleWrapper>
           <CardTitle>{props.chord.root + " " + props.currentScale}</CardTitle>
         </TitleWrapper>
-        <ScaleSelector
-          currentScale={props.currentScale}
-          chordScales={props.chordScales}
-          onScaleChange={scale => {
-            props.onScaleChange(scale);
-          }}
-        />
+        <ScaleSelectorWrapper>
+          <ScaleSelector
+            currentScale={props.currentScale}
+            chordScales={props.chordScales}
+            onScaleChange={scale => {
+              props.onScaleChange(scale);
+            }}
+          />
+        </ScaleSelectorWrapper>
       </TitleButtonWrapper>
       <PlayerNotesWrapper>
         <ScalePlayer notes={props.currentScaleNotes}></ScalePlayer>
@@ -44,6 +46,10 @@ const TitleWrapper = styled.div`
   height: 20%;
   min-width: 60%;
   margin-right: 5%;
+`;
+
+const ScaleSelectorWrapper = styled.div`
+  width: 30%;
 `;
 
 const PlayerNotesWrapper = styled.div`

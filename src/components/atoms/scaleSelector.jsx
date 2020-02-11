@@ -24,6 +24,7 @@ const SelectBox = styled.select`
   outline: none;
   background: transparent;
   box-shadow: none;
+  width: 100%;
   color: ${variables.scaleSelectorColor};
 `;
 
