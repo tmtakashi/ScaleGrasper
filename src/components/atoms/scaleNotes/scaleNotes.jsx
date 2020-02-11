@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import styled from "styled-components";
 import Vex from "vexflow";
 
 const { Accidental, Formatter, Stave, StaveNote, Renderer } = Vex.Flow;
@@ -67,33 +68,36 @@ class ScaleNotes extends Component {
   }
 
   renderScale() {
-    this.state.renderer.resize(750, 100);
-    let context = this.state.renderer.getContext();
+    const context = this.state.renderer.getContext();
     context.clear();
-    context.setViewBox(0, 0, 1200, 100);
 
-    let firstStave = new Stave(20, 0, 300);
+    const svg = context.svg;
+    svg.setAttribute("width", "100%");
+    svg.setAttribute("height", "100%");
+    svg.setAttribute("viewBox", "0 0 580 120"); // or whatever your defaults were
+    svg.setAttribute("preserveAspectRatio", "xMidYMid");
+
+    const firstStave = new Stave(20, 0, 300);
     firstStave.addClef("treble");
     firstStave.setContext(context).draw();
-    let firstNotes = this.firstStaveNotes();
+    const firstNotes = this.firstStaveNotes();
     Formatter.FormatAndDraw(context, firstStave, firstNotes);
 
-    let secondStave = new Stave(320, 0, 300);
+    const secondStave = new Stave(320, 0, 300);
     secondStave.setContext(context).draw();
 
-    let secondNotes = this.secondStaveNotes();
+    const secondNotes = this.secondStaveNotes();
     Formatter.FormatAndDraw(context, secondStave, secondNotes);
   }
 
   render() {
-    return (
-      <div
-        id="scaleNotes"
-        ref={this.wrapperRef}
-        dangerouslySetInnerHTML={{ __html: "" }}
-      ></div>
-    );
+    return <Container id="scaleNotes" ref={this.wrapperRef}></Container>;
   }
 }
+
+const Container = styled.div`
+  width: 100%;
+  height: 100%;
+`;
 
 export default ScaleNotes;

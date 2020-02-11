@@ -54,7 +54,11 @@ const PlayerNotesWrapper = styled.div`
 `;
 
 const NotesWrapper = styled.div`
+  display: flex;
+  align-items: center;
   margin-left: 5%;
+  height: 100%;
+  width: 85%;
 `;
 
 export default ScaleCard;
