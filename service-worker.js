@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/ScaleGrasper/precache-manifest.46e0a1a6641fcd96a203f520191610c8.js"
+  "/ScaleGrasper/precache-manifest.9905cb1441ecaf32bd1d00d6861011e4.js"
 );
 
 self.addEventListener('message', (event) => {

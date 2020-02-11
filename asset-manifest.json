@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/ScaleGrasper/static/css/main.71ffa7fb.chunk.css",
-    "main.js": "/ScaleGrasper/static/js/main.1744e17b.chunk.js",
-    "main.js.map": "/ScaleGrasper/static/js/main.1744e17b.chunk.js.map",
+    "main.js": "/ScaleGrasper/static/js/main.60ee4fd7.chunk.js",
+    "main.js.map": "/ScaleGrasper/static/js/main.60ee4fd7.chunk.js.map",
     "runtime-main.js": "/ScaleGrasper/static/js/runtime-main.208fc25f.js",
     "runtime-main.js.map": "/ScaleGrasper/static/js/runtime-main.208fc25f.js.map",
     "static/js/2.70630884.chunk.js": "/ScaleGrasper/static/js/2.70630884.chunk.js",
     "static/js/2.70630884.chunk.js.map": "/ScaleGrasper/static/js/2.70630884.chunk.js.map",
     "index.html": "/ScaleGrasper/index.html",
-    "precache-manifest.46e0a1a6641fcd96a203f520191610c8.js": "/ScaleGrasper/precache-manifest.46e0a1a6641fcd96a203f520191610c8.js",
+    "precache-manifest.9905cb1441ecaf32bd1d00d6861011e4.js": "/ScaleGrasper/precache-manifest.9905cb1441ecaf32bd1d00d6861011e4.js",
     "service-worker.js": "/ScaleGrasper/service-worker.js",
     "static/css/main.71ffa7fb.chunk.css.map": "/ScaleGrasper/static/css/main.71ffa7fb.chunk.css.map",
     "static/js/2.70630884.chunk.js.LICENSE": "/ScaleGrasper/static/js/2.70630884.chunk.js.LICENSE"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.208fc25f.js",
     "static/js/2.70630884.chunk.js",
     "static/css/main.71ffa7fb.chunk.css",
-    "static/js/main.1744e17b.chunk.js"
+    "static/js/main.60ee4fd7.chunk.js"
   ]
 }
